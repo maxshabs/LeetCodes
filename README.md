@@ -1,4 +1,4 @@
-# 🏆 LeetCode Journey
+# 🏆 LeetCode Solutions Repository
 
 Welcome to my LeetCode solutions repository! This is my way of sharing my journey tackling algorithmic challenges and improving my problem-solving skills. Here, I’ll aim to solve at least one problem a day, adding solutions and insights along the way.
 
