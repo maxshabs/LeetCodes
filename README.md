@@ -4,8 +4,6 @@ Welcome to my LeetCode solutions repository! This is my way of sharing my journe
 
 ## 📘 Repository Structure
 
-Solutions are organized by **difficulty level** (Easy, Medium, Hard) and then by **topic** for easy navigation. Each solution includes a summary or link to the original problem on LeetCode, my thought process and strategy, and a well-documented, optimized solution.
-
----
+Solutions are organized by **difficulty level** (Easy, Medium, Hard) and then by **topic** for easy navigation.
 
 Happy coding and problem-solving! 💪🚀
