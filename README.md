@@ -6,4 +6,6 @@ Welcome to my LeetCode solutions repository! This is my way of sharing my journe
 
 Solutions are organized by **difficulty level** (Easy, Medium, Hard) and then by **topic** for easy navigation.
 
+---
+
 Happy coding and problem-solving! 💪🚀
