@@ -8,4 +8,4 @@ All solutions are implemented in **Python** and organized by **difficulty level*
 
 ---
 
-Happy coding and problem-solving! 💪🚀
+### Happy coding and problem-solving! 💪🚀
