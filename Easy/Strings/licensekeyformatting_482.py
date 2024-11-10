@@ -1,5 +1,5 @@
 # Solution for LeetCode problem 482: License Key Formatting
-# Time Complecity: O(n), where n is the length of the input string s
+# Time Complexity: O(n), where n is the length of the input string s
 class Solution(object):
     def licenseKeyFormatting(self, s, k):
         """
