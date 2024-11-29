@@ -1,0 +1,19 @@
+# Solution for LeetCode Problem 1456. Maximum Number Of Vowels In a Substring Of Given Length
+# Time Complexity: O(n), where n is the size of the input array "s"
+# Space Complexity: O(1), as we only use two variables to track current and maximum sums
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        vowel_sum = 0
+        for i in range(k):
+            if s[i] in "aeiou":
+                vowel_sum += 1
+        max_sum = vowel_sum
+        loop_len = len(s) - (k - 1)
+        for i in range(1, loop_len):
+            if s[i - 1] in "aeiou":
+                vowel_sum -= 1
+            if s[i + (k - 1)] in "aeiou":
+                vowel_sum += 1
+            if vowel_sum > max_sum:
+                max_sum = vowel_sum
+        return(max_sum)
