@@ -1,20 +1,16 @@
+# Solution for LeetCode Problem 1004. Max Consecutive Ones III
+# Time Complexity: O(n), where n is the size of the input array "nums"
+# Space Complexity: O(1), as we only use two pointers
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
-        max_size = cur_size = i = 0
+        left = right = 0
         nums_len = len(nums)
-        while i < nums_len:
-            if nums[i] == 0 and k > 0:
+        while right < nums_len:
+            if nums[right] == 0:
                 k -= 1
-                cur_size += 1
-            elif nums[i] == 1:
-                cur_size += 1
-            elif nums[i] == 0 and k == 0 and cur_size > 0:
-                if nums[i - cur_size] == 0:
+            if k < 0:
+                if nums[left] == 0:
                     k += 1
-                    cur_size -= 1
-                else:
-                    cur_size -= 1
-                continue
-            max_size = max(max_size, cur_size)
-            i += 1
-        return max_size
+                left += 1
+            right += 1
+        return right - left
