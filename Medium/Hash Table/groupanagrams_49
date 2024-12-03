@@ -1,0 +1,30 @@
+# Solution for LeetCode Problem 49. Group Anagrams
+# Time Complexity: O(n * m) where n is the number of strings and m is the length of the longest word
+# Space Complexity: O(n), where n is the number of strings
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # Dictionary to store grouped anagrams, with the frequency tuple as the key
+        result_list = {}
+
+        # Iterate through each word in the input list
+        for word in strs:
+            # Step 1: Create a frequency count of characters for the current word
+            char_count = [
+                             0] * 26  # Initialize a list of 26 zeros for 'a' to 'z'
+            for char in word:
+                char_count[ord(char) - ord(
+                    'a')] += 1  # Increment the count for the current character
+
+            # Step 2: Convert the frequency list into a tuple to use it as a dictionary key
+            key = tuple(char_count)
+
+            # Step 3: Check if the key exists in the dictionary
+            if key not in result_list:
+                result_list[
+                    key] = []  # Initialize a new list if the key doesn't exist
+
+            # Step 4: Append the current word to the appropriate group
+            result_list[key].append(word)
+
+        # Step 5: Return the grouped anagrams as a list of lists
+        return list(result_list.values())
