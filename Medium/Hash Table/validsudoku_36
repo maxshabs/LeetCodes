@@ -1,0 +1,32 @@
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        for row in range(9):
+            row_set = set()
+            for column in range(9):
+                if board[row][column] == ".":
+                    continue
+                if board[row][column] in row_set:
+                    return False
+                row_set.add(board[row][column])
+
+        for column in range(9):
+            column_set = set()
+            for row in range(9):
+                if board[row][column] == ".":
+                    continue
+                if board[row][column] in column_set:
+                    return False
+                column_set.add(board[row][column])
+
+        for square in range(9):
+            square_set = set()
+            for i in range(3):
+                for j in range(3):
+                    row = (square // 3) * 3 + i
+                    column = (square % 3) * 3 + j
+                    if board[row][column] == ".":
+                        continue
+                    if board[row][column] in square_set:
+                        return False
+                    square_set.add(board[row][column])
+        return True
