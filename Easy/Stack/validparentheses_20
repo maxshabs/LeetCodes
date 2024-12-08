@@ -1,0 +1,46 @@
+# Solution for LeetCode Problem 20: Valid Parentheses
+# Time Complexity: O(n), where n is the length of the input string `s`
+#   - Each character in the string is processed once, and stack operations (push and pop) are O(1).
+# Space Complexity: O(n), where n is the length of the input string `s`
+#   - In the worst case, all characters in the string could be pushed onto the stack.
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        # Stack to keep track of open parentheses
+        par_stack = []
+
+        # Initialize index and length of the string
+        i = 0
+        s_length = len(s)
+
+        # Set of valid opening brackets
+        bracket_set = {"(", "[", "{"}
+
+        # Iterate through each character in the string
+        while i < s_length:
+            cur_char = s[i]
+
+            # If the current character is an opening bracket, push it onto the stack
+            if cur_char in bracket_set:
+                par_stack.append(cur_char)
+            else:
+                # If the stack is empty, there's no corresponding opening bracket
+                if not par_stack:
+                    return False
+
+                # Check if the current closing bracket matches the top of the stack
+                if cur_char == ")" and par_stack.pop() != "(":
+                    return False
+                elif cur_char == "]" and par_stack.pop() != "[":
+                    return False
+                elif cur_char == "}" and par_stack.pop() != "{":
+                    return False
+
+            # Move to the next character
+            i += 1
+
+        # If the stack is empty, all brackets were matched correctly
+        if not par_stack:
+            return True
+        else:
+            return False
