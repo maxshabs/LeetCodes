@@ -1,0 +1,29 @@
+# Solution for LeetCode Problem 704: Binary Search
+# Time Complexity: O(log n), where n is the length of the input list `nums`
+#   - Each iteration reduces the search space by half.
+# Space Complexity: O(1), as the solution uses a constant amount of extra space.
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        # Initialize the left and right pointers
+        left = 0
+        right = len(nums) - 1
+
+        # Perform binary search
+        while left <= right:
+            # Calculate the middle index
+            middle = (left + right) // 2
+
+            # If the middle element is less than the target, search the right half
+            if nums[middle] < target:
+                left = middle + 1
+
+            # If the middle element is greater than the target, search the left half
+            elif nums[middle] > target:
+                right = middle - 1
+
+            # If the middle element is equal to the target, return the middle index
+            else:
+                return middle
+
+        # If the target is not found, return -1
+        return -1
