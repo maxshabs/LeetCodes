@@ -3,11 +3,13 @@
 #   - Each node is processed exactly once, either for counting or reversal.
 # Space Complexity: O(1) additional space, as the reversal is done in place.
 
+from typing import Optional
+
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
