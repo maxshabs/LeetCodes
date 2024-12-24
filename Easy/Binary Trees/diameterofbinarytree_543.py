@@ -1,4 +1,4 @@
-# Solution for Leetcode Problem 543: Diameter of Binary Tree
+# Solution for LeetCode Problem 543: Diameter of Binary Tree
 # Time Complexity: O(n), where n is the number of nodes in the binary tree.
 # Space Complexity: O(h), where h is the height of the binary tree (due to the recursive stack space).
 
