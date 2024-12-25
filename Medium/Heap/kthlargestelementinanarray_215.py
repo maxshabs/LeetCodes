@@ -1,6 +1,7 @@
 # Solution for LeetCode Problem 215: Kth Largest Element in an Array
-# Time Complexity: O(n log k), where n is the length of the input array `nums`.
-# - Building the heap takes O(n log k)
+# Time Complexity: O(k + (n - k) * log k), where n is the length of the input array `nums`.
+# - Building the heap takes O(k).
+# - For each of the remaining (n - k) elements, we perform an O(log k) operation.
 # Space Complexity: O(k), for maintaining a heap of size `k`.
 
 from typing import List
@@ -15,17 +16,18 @@ class Solution:
         :param k: Integer representing the position of the largest element to find.
         :return: The kth largest element in the array.
         """
-        # Initialize an empty min-heap
-        min_heap = []
+        # Step 1: Build a min-heap with the first k elements.
+        min_heap = nums[:k]
+        heapq.heapify(min_heap)
         
-        # Iterate through the list of numbers
-        for num in nums:
-            # Add each number to the heap
-            heapq.heappush(min_heap, num)
-            
-            # If the size of the heap exceeds k, remove the smallest element
-            if len(min_heap) > k:
+        # Step 2: Process the remaining elements in the array.
+        nums_len = len(nums)
+        for num in nums[k:]:
+            # If the current number is larger than or equal to the smallest element in the heap,
+            # replace the smallest element with the current number.
+            if num >= min_heap[0]:
                 heapq.heappop(min_heap)
+                heapq.heappush(min_heap, num)
         
-        # The root of the heap is the kth largest element
+        # Step 3: The root of the heap is the kth largest element.
         return min_heap[0]
