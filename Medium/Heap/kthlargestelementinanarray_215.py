@@ -21,7 +21,6 @@ class Solution:
         heapq.heapify(min_heap)
         
         # Step 2: Process the remaining elements in the array.
-        nums_len = len(nums)
         for num in nums[k:]:
             # If the current number is larger than or equal to the smallest element in the heap,
             # replace the smallest element with the current number.
