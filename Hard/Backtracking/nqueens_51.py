@@ -7,7 +7,7 @@ from typing import List
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         """
-        Solves the N-Queens problem, finding all possible ways to place N queens 
+        Solves the N-Queens problem, finding all possible ways to place n queens 
         on an n x n chessboard such that no two queens attack each other.
 
         :param n: The size of the chessboard (n x n).
