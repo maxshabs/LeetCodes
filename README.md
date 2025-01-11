@@ -8,7 +8,9 @@ All solutions are implemented in **Python** and organized by **difficulty level*
 
 ## 🔗 My LeetCode Profile
 
-[![LeetCode](https://icons8.com/icon/S22n5FcHWTiO/leetcode)](https://leetcode.com/u/maxshabs/)
+<a href="https://leetcode.com/u/maxshabs/">
+  <img src="https://leetcode.com/static/images/LeetCode_logo_rvs.png" alt="LeetCode Profile" width="150">
+</a>
 
 Click the logo above to visit my profile!
 
