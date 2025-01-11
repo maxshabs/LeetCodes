@@ -13,5 +13,3 @@ All solutions are implemented in **Python** and organized by **difficulty level*
 </a>
 
 Click the logo above to visit my profile!
-
-### Happy coding and problem-solving! 💪🚀
