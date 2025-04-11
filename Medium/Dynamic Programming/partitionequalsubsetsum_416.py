@@ -4,13 +4,6 @@
 
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
-        """
-        Determines if the given array `nums` can be partitioned into two subsets
-        such that the sum of elements in both subsets is equal.
-
-        :param nums: List of positive integers.
-        :return: True if the array can be partitioned into two subsets with equal sum, otherwise False.
-        """
         # Step 1: Calculate the total sum of the array
         total_sum = sum(nums)
 
