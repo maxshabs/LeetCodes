@@ -19,7 +19,7 @@ class Solution:
                 count += 1
 
             # Shrink the window from the left while max_val appears at least k times
-            while count >= k:
+            while count == k:
                 # All subarrays starting from 'left' and ending at or after 'right' are valid
                 result += n - right
                 if nums[left] == max_val:
